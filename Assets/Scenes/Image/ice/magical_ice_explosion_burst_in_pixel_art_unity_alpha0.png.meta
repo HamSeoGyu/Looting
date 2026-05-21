@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: 82baaaf698d1b974694863f96286174a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8143928769380920028
+    second: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_0
+  - first:
+      213: -6184989189677379352
+    second: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_1
+  - first:
+      213: -6920485888052981538
+    second: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_2
+  - first:
+      213: -569645646442080744
+    second: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_3
+  - first:
+      213: 6111905893284983741
+    second: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_4
+  - first:
+      213: 3268253219798412521
+    second: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_5
+  - first:
+      213: 5285590371547843970
+    second: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_6
+  - first:
+      213: 4613059048264773436
+    second: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_7
+  - first:
+      213: -2435626129882916691
+    second: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_8
+  - first:
+      213: -1738299224778362760
+    second: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_0
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 266
+        width: 775
+        height: 794
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdaa80f311c050170800000000000000
+      internalID: 8143928769380920028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_1
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 976
+        width: 93
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e016a9f9118a2aa0800000000000000
+      internalID: -6184989189677379352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_2
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 752
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed09f7940ce75ff90800000000000000
+      internalID: -6920485888052981538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 824
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816d8fb7d463818f0800000000000000
+      internalID: -569645646442080744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_4
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 704
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db33ed5170ad1d450800000000000000
+      internalID: 6111905893284983741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_5
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 703
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec6c1accfa2b5d20800000000000000
+      internalID: 3268253219798412521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_6
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 704
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d855c40703a5940800000000000000
+      internalID: 5285590371547843970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_7
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 628
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3f29bb63c0e40040800000000000000
+      internalID: 4613059048264773436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_8
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 496
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da85baa70fae23ed0800000000000000
+      internalID: -2435626129882916691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical_ice_explosion_burst_in_pixel_art_unity_alpha0_9
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 517
+        width: 97
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870bfb1a01250e7e0800000000000000
+      internalID: -1738299224778362760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      magical_ice_explosion_burst_in_pixel_art_unity_alpha0_0: 8143928769380920028
+      magical_ice_explosion_burst_in_pixel_art_unity_alpha0_1: -6184989189677379352
+      magical_ice_explosion_burst_in_pixel_art_unity_alpha0_2: -6920485888052981538
+      magical_ice_explosion_burst_in_pixel_art_unity_alpha0_3: -569645646442080744
+      magical_ice_explosion_burst_in_pixel_art_unity_alpha0_4: 6111905893284983741
+      magical_ice_explosion_burst_in_pixel_art_unity_alpha0_5: 3268253219798412521
+      magical_ice_explosion_burst_in_pixel_art_unity_alpha0_6: 5285590371547843970
+      magical_ice_explosion_burst_in_pixel_art_unity_alpha0_7: 4613059048264773436
+      magical_ice_explosion_burst_in_pixel_art_unity_alpha0_8: -2435626129882916691
+      magical_ice_explosion_burst_in_pixel_art_unity_alpha0_9: -1738299224778362760
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

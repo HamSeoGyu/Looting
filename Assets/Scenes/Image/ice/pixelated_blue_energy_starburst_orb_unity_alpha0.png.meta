@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 784ac88f48067cf4ab504b03bda39bfe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3654200236866891409
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_0
+  - first:
+      213: 963643099218870963
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_1
+  - first:
+      213: -8619237623398661379
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_2
+  - first:
+      213: -5497268512423097685
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_3
+  - first:
+      213: -2736622478352108914
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_4
+  - first:
+      213: -6904615894475440843
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_5
+  - first:
+      213: -4635182055466554061
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_6
+  - first:
+      213: -6348900191632658604
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_7
+  - first:
+      213: 6519621219516165697
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_8
+  - first:
+      213: -2218952737540367294
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_9
+  - first:
+      213: 6390179223549586751
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_10
+  - first:
+      213: 7079782768248358662
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_11
+  - first:
+      213: -8256459609580024662
+    second: pixelated_blue_energy_starburst_orb_unity_alpha0_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_0
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 262
+        width: 842
+        height: 814
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e699031c356b230800000000000000
+      internalID: 3654200236866891409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_1
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1053
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b2823b0b4c8f5d00800000000000000
+      internalID: 963643099218870963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_2
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1017
+        width: 79
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df204a65c01526880800000000000000
+      internalID: -8619237623398661379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_3
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 1053
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baac41ae967c5b3b0800000000000000
+      internalID: -5497268512423097685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_4
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 849
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e82397dea50950ad0800000000000000
+      internalID: -2736622478352108914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 689
+        width: 66
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d764b1d60ed20a0800000000000000
+      internalID: -6904615894475440843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_6
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 649
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33da6a29a768cafb0800000000000000
+      internalID: -4635182055466554061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_7
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 486
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f6353e9ec24e7a0800000000000000
+      internalID: -6348900191632658604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_8
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 403
+        width: 83
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e2c5be4f85a7a50800000000000000
+      internalID: 6519621219516165697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_9
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 261
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24c9681ed32b431e0800000000000000
+      internalID: -2218952737540367294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_10
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 197
+        width: 105
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3d21cea52a7ea850800000000000000
+      internalID: 6390179223549586751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_11
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 231
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607006cdae0704260800000000000000
+      internalID: 7079782768248358662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated_blue_energy_starburst_orb_unity_alpha0_12
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 197
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac4f9ccab92b6d80800000000000000
+      internalID: -8256459609580024662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pixelated_blue_energy_starburst_orb_unity_alpha0_0: 3654200236866891409
+      pixelated_blue_energy_starburst_orb_unity_alpha0_1: 963643099218870963
+      pixelated_blue_energy_starburst_orb_unity_alpha0_10: 6390179223549586751
+      pixelated_blue_energy_starburst_orb_unity_alpha0_11: 7079782768248358662
+      pixelated_blue_energy_starburst_orb_unity_alpha0_12: -8256459609580024662
+      pixelated_blue_energy_starburst_orb_unity_alpha0_2: -8619237623398661379
+      pixelated_blue_energy_starburst_orb_unity_alpha0_3: -5497268512423097685
+      pixelated_blue_energy_starburst_orb_unity_alpha0_4: -2736622478352108914
+      pixelated_blue_energy_starburst_orb_unity_alpha0_5: -6904615894475440843
+      pixelated_blue_energy_starburst_orb_unity_alpha0_6: -4635182055466554061
+      pixelated_blue_energy_starburst_orb_unity_alpha0_7: -6348900191632658604
+      pixelated_blue_energy_starburst_orb_unity_alpha0_8: 6519621219516165697
+      pixelated_blue_energy_starburst_orb_unity_alpha0_9: -2218952737540367294
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

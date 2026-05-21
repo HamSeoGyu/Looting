@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 4cf480a89319e4849a8faf1a108ba9c8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9900077042764578
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_0
+  - first:
+      213: 6693512348879687186
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_1
+  - first:
+      213: 6707534235359089511
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_2
+  - first:
+      213: 7149954505097389973
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_3
+  - first:
+      213: 6302471463372320355
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_4
+  - first:
+      213: -4480785025877124423
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_5
+  - first:
+      213: 6488190377225720472
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_6
+  - first:
+      213: -4464296529459425009
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_7
+  - first:
+      213: 2934290159025386902
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_8
+  - first:
+      213: -1660455278099037896
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_9
+  - first:
+      213: 8399850357290463828
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_10
+  - first:
+      213: 6027692060735513476
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_11
+  - first:
+      213: 1322684687262510817
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_12
+  - first:
+      213: 6718479010855345570
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_13
+  - first:
+      213: 7535547059036522276
+    second: icy_pixel_energy_burst_explosion_unity_alpha0_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_0
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 887
+        width: 120
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed4fd90bee3dcdff0800000000000000
+      internalID: -9900077042764578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_1
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1000
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e0aae740224ec50800000000000000
+      internalID: 6693512348879687186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_2
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 961
+        width: 57
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 763995959d2f51d50800000000000000
+      internalID: 6707534235359089511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_3
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 846
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 597a8848dbdb93360800000000000000
+      internalID: 7149954505097389973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_4
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 433
+        width: 507
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36ee75d6760e67750800000000000000
+      internalID: 6302471463372320355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_5
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 744
+        width: 60
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ba54b952cd01d1c0800000000000000
+      internalID: -4480785025877124423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_6
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 756
+        width: 83
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89295ada5ceaa0a50800000000000000
+      internalID: 6488190377225720472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 673
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f01df8595f1ab02c0800000000000000
+      internalID: -4464296529459425009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_8
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 608
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 695f1a46a51b8b820800000000000000
+      internalID: 2934290159025386902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_9
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 464
+        width: 106
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8310c77d8b0e4f8e0800000000000000
+      internalID: -1660455278099037896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_10
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 569
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4527cb84563429470800000000000000
+      internalID: 8399850357290463828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_11
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 407
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 483259f3ef9a6a350800000000000000
+      internalID: 6027692060735513476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_12
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 374
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee612617be1b5210800000000000000
+      internalID: 1322684687262510817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_13
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 373
+        width: 110
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad53f87015dc3d50800000000000000
+      internalID: 6718479010855345570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icy_pixel_energy_burst_explosion_unity_alpha0_14
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 384
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4278c1a0024a39860800000000000000
+      internalID: 7535547059036522276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      icy_pixel_energy_burst_explosion_unity_alpha0_0: -9900077042764578
+      icy_pixel_energy_burst_explosion_unity_alpha0_1: 6693512348879687186
+      icy_pixel_energy_burst_explosion_unity_alpha0_10: 8399850357290463828
+      icy_pixel_energy_burst_explosion_unity_alpha0_11: 6027692060735513476
+      icy_pixel_energy_burst_explosion_unity_alpha0_12: 1322684687262510817
+      icy_pixel_energy_burst_explosion_unity_alpha0_13: 6718479010855345570
+      icy_pixel_energy_burst_explosion_unity_alpha0_14: 7535547059036522276
+      icy_pixel_energy_burst_explosion_unity_alpha0_2: 6707534235359089511
+      icy_pixel_energy_burst_explosion_unity_alpha0_3: 7149954505097389973
+      icy_pixel_energy_burst_explosion_unity_alpha0_4: 6302471463372320355
+      icy_pixel_energy_burst_explosion_unity_alpha0_5: -4480785025877124423
+      icy_pixel_energy_burst_explosion_unity_alpha0_6: 6488190377225720472
+      icy_pixel_energy_burst_explosion_unity_alpha0_7: -4464296529459425009
+      icy_pixel_energy_burst_explosion_unity_alpha0_8: 2934290159025386902
+      icy_pixel_energy_burst_explosion_unity_alpha0_9: -1660455278099037896
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
