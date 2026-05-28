@@ -7,10 +7,7 @@ public class StageMonsterManager : MonoBehaviour
 
     [Header("Monster Count")]
     public int maxMonsterCount = 30;
-    public TextMeshProUGUI monsterCountText;   // MonsterCountText 하나만 사용
-
-    [Header("Fail UI")]
-    public GameObject failPanel;
+    public TextMeshProUGUI monsterCountText;
 
     private bool isStageFailed = false;
     private int aliveCount = 0;
@@ -32,9 +29,6 @@ public class StageMonsterManager : MonoBehaviour
         {
             Debug.LogError("StageMonsterManager: monsterCountText가 연결되지 않았습니다.");
         }
-
-        if (failPanel != null)
-            failPanel.SetActive(false);
 
         RefreshAliveCount();
         UpdateMonsterCountUI();
@@ -71,14 +65,20 @@ public class StageMonsterManager : MonoBehaviour
 
         isStageFailed = true;
 
-        if (failPanel != null)
-            failPanel.SetActive(true);
+        if (StageResultUI.Instance != null)
+        {
+            StageResultUI.Instance.ShowStageFail();
+        }
+        else
+        {
+            Time.timeScale = 0f;
+            Debug.LogWarning("StageResultUI가 없어 Time.timeScale만 정지했습니다.");
+        }
 
-        Time.timeScale = 0f;
         Debug.Log("스테이지 실패");
     }
 
-    // 기존 코드와 호환용
+    // 기존 코드 호환용
     public void RegisterEnemy(GameObject enemy)
     {
         RefreshAliveCount();

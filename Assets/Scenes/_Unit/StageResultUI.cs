@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class StageResultUI : MonoBehaviour
 {
@@ -12,10 +11,12 @@ public class StageResultUI : MonoBehaviour
     public GameObject stageClearImage;
     public GameObject stageFailImage;
 
-    [Header("Optional")]
-    public bool freezeTimeWhenResultShown = true;
+    [Header("Option")]
+    public bool freezeTimeWhenShown = true;
 
-    private bool isResultShown = false;
+    private bool resultShown = false;
+
+    public bool IsResultShown => resultShown;
 
     void Awake()
     {
@@ -26,14 +27,13 @@ public class StageResultUI : MonoBehaviour
         }
 
         Instance = this;
-
         HideAll();
     }
 
     public void ShowStageClear()
     {
-        if (isResultShown) return;
-        isResultShown = true;
+        if (resultShown) return;
+        resultShown = true;
 
         if (resultPanel != null)
             resultPanel.SetActive(true);
@@ -44,7 +44,7 @@ public class StageResultUI : MonoBehaviour
         if (stageFailImage != null)
             stageFailImage.SetActive(false);
 
-        if (freezeTimeWhenResultShown)
+        if (freezeTimeWhenShown)
             Time.timeScale = 0f;
 
         Debug.Log("STAGE CLEAR 표시");
@@ -52,8 +52,8 @@ public class StageResultUI : MonoBehaviour
 
     public void ShowStageFail()
     {
-        if (isResultShown) return;
-        isResultShown = true;
+        if (resultShown) return;
+        resultShown = true;
 
         if (resultPanel != null)
             resultPanel.SetActive(true);
@@ -64,7 +64,7 @@ public class StageResultUI : MonoBehaviour
         if (stageFailImage != null)
             stageFailImage.SetActive(true);
 
-        if (freezeTimeWhenResultShown)
+        if (freezeTimeWhenShown)
             Time.timeScale = 0f;
 
         Debug.Log("STAGE FAIL 표시");
@@ -72,7 +72,7 @@ public class StageResultUI : MonoBehaviour
 
     public void HideAll()
     {
-        isResultShown = false;
+        resultShown = false;
 
         if (resultPanel != null)
             resultPanel.SetActive(false);
@@ -84,10 +84,5 @@ public class StageResultUI : MonoBehaviour
             stageFailImage.SetActive(false);
 
         Time.timeScale = 1f;
-    }
-
-    public bool IsResultShown()
-    {
-        return isResultShown;
     }
 }

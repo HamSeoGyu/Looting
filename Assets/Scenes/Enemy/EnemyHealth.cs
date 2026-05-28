@@ -77,9 +77,8 @@ public class EnemyHealth : MonoBehaviour
         newScale.x = hpBarOriginalScale.x * ratio;
         hpBarFill.localScale = newScale;
 
-        // 지금 기준에서 반대 방향으로 줄어들게
+        // 오른쪽에서 왼쪽으로 줄어들게 유지
         float diff = hpBarOriginalScale.x - newScale.x;
-
         Vector3 newPos = hpBarOriginalPosition;
         newPos.x = hpBarOriginalPosition.x + diff / 2f;
         hpBarFill.localPosition = newPos;
@@ -93,6 +92,12 @@ public class EnemyHealth : MonoBehaviour
         if (GoldManager.Instance != null)
         {
             GoldManager.Instance.AddGold(rewardGold);
+        }
+
+        // 살아 있는 적 카운트에서 즉시 빠지도록 태그 제거
+        if (CompareTag("Enemy"))
+        {
+            gameObject.tag = "Untagged";
         }
 
         // 이동 멈춤
@@ -125,10 +130,6 @@ public class EnemyHealth : MonoBehaviour
     {
         if (animator == null) return;
 
-        // 스크린샷 기준:
-        // 4_Death = Trigger
-        // isDeath  = Bool
-
         if (HasTriggerParameter(animator, "4_Death"))
         {
             animator.ResetTrigger("4_Death");
@@ -154,6 +155,7 @@ public class EnemyHealth : MonoBehaviour
             if (param.name == paramName && param.type == AnimatorControllerParameterType.Bool)
                 return true;
         }
+
         return false;
     }
 
@@ -164,6 +166,7 @@ public class EnemyHealth : MonoBehaviour
             if (param.name == paramName && param.type == AnimatorControllerParameterType.Trigger)
                 return true;
         }
+
         return false;
     }
 }
