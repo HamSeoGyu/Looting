@@ -102,6 +102,17 @@ public class EnemySpawner : MonoBehaviour
         // 마지막 웨이브에서 보스 추가
         if (wave == maxWaves && bossPrefab != null)
         {
+            Debug.Log("보스 웨이브 시작 - 보스 BGM 재생");
+
+            if (BGMManager.Instance != null)
+            {
+                BGMManager.Instance.PlayBossWaveBgm();
+            }
+            else
+            {
+                Debug.LogWarning("BGMManager.Instance가 없습니다.");
+            }
+
             SpawnEnemy(bossPrefab, wave, true);
         }
     }
