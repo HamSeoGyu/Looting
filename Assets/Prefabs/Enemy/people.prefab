@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: -2692643598211972593}
   - component: {fileID: 8717998042615384115}
   - component: {fileID: 6369748042126917328}
+  - component: {fileID: 4938224551891237817}
   m_Layer: 5
   m_Name: people
   m_TagString: Enemy
@@ -2249,6 +2250,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   reachDistance: 0.05
   visualRoot: {fileID: 8038010196219184886}
+  invertFacing: 1
   isFrozen: 0
   isSlowed: 0
 --- !u!114 &8717998042615384115
@@ -2315,6 +2317,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4938224551891237817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532708365349004997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b48713f548b9574e86dc35e024b3ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SPUMEnemyWalk
+  spumPrefab: {fileID: 1699799570411277581}
+  animator: {fileID: 0}
+  moveIndex: 0
+  playMoveOnEnable: 1
+  loopMove: 1
+  deathIndex: 0
 --- !u!1 &894269904535219813
 GameObject:
   m_ObjectHideFlags: 0

@@ -128,6 +128,19 @@ public class EnemyHealth : MonoBehaviour
 
     void PlayDeathAnimation()
     {
+        SPUMEnemyWalk spumEnemyWalk = GetComponent<SPUMEnemyWalk>();
+
+        if (spumEnemyWalk == null)
+            spumEnemyWalk = GetComponentInChildren<SPUMEnemyWalk>(true);
+
+        if (spumEnemyWalk != null)
+        {
+            bool played = spumEnemyWalk.PlayDeath();
+
+            if (played)
+                return;
+        }
+
         if (animator == null) return;
 
         if (HasTriggerParameter(animator, "4_Death"))

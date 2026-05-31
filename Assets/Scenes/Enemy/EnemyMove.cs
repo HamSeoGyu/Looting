@@ -12,6 +12,9 @@ public class EnemyMove : MonoBehaviour
     [Header("Facing")]
     public Transform visualRoot;
 
+    // SPUM처럼 기본 방향이 반대인 몬스터용
+    public bool invertFacing = false;
+
     private int currentIndex = 0;
     private Vector3 originalScale;
 
@@ -39,6 +42,7 @@ public class EnemyMove : MonoBehaviour
             if (route.Count > 1)
             {
                 Transform firstTarget = route.GetPoint(currentIndex);
+
                 if (firstTarget != null)
                 {
                     Vector3 dir = firstTarget.position - transform.position;
@@ -71,6 +75,7 @@ public class EnemyMove : MonoBehaviour
         }
 
         float currentMoveSpeed = moveSpeed;
+
         if (isSlowed)
         {
             currentMoveSpeed *= slowMultiplier;
@@ -87,29 +92,41 @@ public class EnemyMove : MonoBehaviour
 
         if (Mathf.Abs(currentDir.x) > 0.01f)
         {
-            if (currentDir.x > 0f)
-                scale.x = Mathf.Abs(originalScale.x);
-            else
-                scale.x = -Mathf.Abs(originalScale.x);
-
+            ApplyFacingScale(currentDir.x, ref scale);
             visualRoot.localScale = scale;
             return;
         }
 
         int nextIndex = (currentIndex + 1) % route.Count;
         Transform nextPoint = route.GetPoint(nextIndex);
+
         if (nextPoint == null) return;
 
         Vector3 nextDir = nextPoint.position - currentTargetPoint.position;
 
         if (Mathf.Abs(nextDir.x) > 0.01f)
         {
-            if (nextDir.x > 0f)
-                scale.x = Mathf.Abs(originalScale.x);
-            else
-                scale.x = -Mathf.Abs(originalScale.x);
-
+            ApplyFacingScale(nextDir.x, ref scale);
             visualRoot.localScale = scale;
+        }
+    }
+
+    private void ApplyFacingScale(float directionX, ref Vector3 scale)
+    {
+        bool faceRight = directionX > 0f;
+
+        if (invertFacing)
+        {
+            faceRight = !faceRight;
+        }
+
+        if (faceRight)
+        {
+            scale.x = Mathf.Abs(originalScale.x);
+        }
+        else
+        {
+            scale.x = -Mathf.Abs(originalScale.x);
         }
     }
 
@@ -126,6 +143,7 @@ public class EnemyMove : MonoBehaviour
         if (route.Count > 1)
         {
             Transform nextTarget = route.GetPoint(currentIndex);
+
             if (nextTarget != null)
             {
                 Vector3 dir = nextTarget.position - transform.position;
