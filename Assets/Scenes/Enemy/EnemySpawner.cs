@@ -91,6 +91,11 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnWave(int wave)
     {
+        if (WaveStartUI.Instance != null)
+        {
+            yield return WaveStartUI.Instance.ShowWave(wave);
+        }
+
         int spawnCount = GetWaveSpawnCount(wave);
 
         for (int i = 0; i < spawnCount; i++)
