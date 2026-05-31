@@ -404,7 +404,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &497868719149060778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7901,6 +7901,8 @@ MonoBehaviour:
   moveSpeed: 1.5
   reachDistance: 0.05
   visualRoot: {fileID: 7507299468015535905}
+  isFrozen: 0
+  isSlowed: 0
 --- !u!114 &2898800204493762449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7913,10 +7915,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff31015e20911e541bc1c6ca5e32fe72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 1
+  maxHP: 20
+  currentHP: 0
   rewardGold: 10
-  deathDestroyDelay: 0.8
   hpBarFill: {fileID: 2297341831986232702}
+  animator: {fileID: 0}
+  destroyDelay: 1.2
 --- !u!61 &-5489412146774731174
 BoxCollider2D:
   m_ObjectHideFlags: 0
