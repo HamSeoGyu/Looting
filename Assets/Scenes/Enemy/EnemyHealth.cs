@@ -52,6 +52,13 @@ public class EnemyHealth : MonoBehaviour
         if (isDead) return;
 
         damage = Mathf.Max(0, damage);
+
+        EnemyBuffReceiver buffReceiver = GetComponent<EnemyBuffReceiver>();
+        if (buffReceiver != null)
+        {
+            damage = buffReceiver.ModifyIncomingDamage(damage);
+        }
+
         currentHP -= damage;
 
         if (currentHP < 0)
@@ -157,7 +164,17 @@ public class EnemyHealth : MonoBehaviour
 
     IEnumerator DestroyAfterDelay()
     {
-        yield return new WaitForSeconds(destroyDelay);
+        EnemyDeathFade deathFade = GetComponent<EnemyDeathFade>();
+
+        if (deathFade != null)
+        {
+            yield return deathFade.FadeOut(destroyDelay);
+        }
+        else
+        {
+            yield return new WaitForSeconds(destroyDelay);
+        }
+
         Destroy(gameObject);
     }
 
