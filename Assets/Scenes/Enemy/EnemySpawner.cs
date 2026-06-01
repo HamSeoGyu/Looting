@@ -57,13 +57,13 @@ public class EnemySpawner : MonoBehaviour
         {
             clearShown = true;
 
-            if (StageResultUI.Instance != null)
+            if (StageResultController.Instance != null)
             {
-                StageResultUI.Instance.ShowStageClear();
+                StageResultController.Instance.ShowClear();
             }
             else
             {
-                Debug.LogWarning("StageResultUI가 연결되지 않아 클리어 UI를 띄우지 못했습니다.");
+                Debug.LogWarning("StageResultController가 연결되지 않아 클리어 UI를 띄우지 못했습니다.");
             }
 
             Debug.Log("스테이지 클리어");

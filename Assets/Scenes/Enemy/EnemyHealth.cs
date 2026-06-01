@@ -19,11 +19,6 @@ public class EnemyHealth : MonoBehaviour
 
     private bool isDead = false;
 
-    public bool IsDead
-    {
-        get { return isDead; }
-    }
-
     private Vector3 hpBarOriginalScale;
     private Vector3 hpBarOriginalPosition;
 
@@ -49,6 +44,13 @@ public class EnemyHealth : MonoBehaviour
     {
         maxHP = Mathf.Max(1, newMaxHP);
         currentHP = maxHP;
+
+        if (hpBarFill != null)
+        {
+            hpBarOriginalScale = hpBarFill.localScale;
+            hpBarOriginalPosition = hpBarFill.localPosition;
+        }
+
         UpdateHPBar();
     }
 
@@ -57,20 +59,13 @@ public class EnemyHealth : MonoBehaviour
         if (isDead) return;
 
         damage = Mathf.Max(0, damage);
-<<<<<<< HEAD
-=======
 
-        EnemyBuffReceiver buffReceiver = GetComponent<EnemyBuffReceiver>();
-        if (buffReceiver != null)
-        {
-            damage = buffReceiver.ModifyIncomingDamage(damage);
-        }
-
->>>>>>> 589f55e (boss 삭제)
         currentHP -= damage;
 
         if (currentHP < 0)
+        {
             currentHP = 0;
+        }
 
         UpdateHPBar();
 
@@ -78,31 +73,6 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
-    }
-
-    public Vector2 GetClosestPoint(Vector2 fromPosition)
-    {
-        Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
-
-        float closestDistance = Mathf.Infinity;
-        Vector2 closestPoint = transform.position;
-
-        foreach (Collider2D col in colliders)
-        {
-            if (col == null) continue;
-            if (!col.enabled) continue;
-
-            Vector2 point = col.ClosestPoint(fromPosition);
-            float distance = Vector2.Distance(fromPosition, point);
-
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestPoint = point;
-            }
-        }
-
-        return closestPoint;
     }
 
     void UpdateHPBar()
@@ -168,14 +138,18 @@ public class EnemyHealth : MonoBehaviour
         SPUMEnemyWalk spumEnemyWalk = GetComponent<SPUMEnemyWalk>();
 
         if (spumEnemyWalk == null)
+        {
             spumEnemyWalk = GetComponentInChildren<SPUMEnemyWalk>(true);
+        }
 
         if (spumEnemyWalk != null)
         {
             bool played = spumEnemyWalk.PlayDeath();
 
             if (played)
+            {
                 return;
+            }
         }
 
         if (animator == null) return;
@@ -195,15 +169,20 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator DestroyAfterDelay()
     {
         yield return new WaitForSeconds(destroyDelay);
+
         Destroy(gameObject);
     }
 
     bool HasBoolParameter(Animator anim, string paramName)
     {
+        if (anim == null) return false;
+
         foreach (AnimatorControllerParameter param in anim.parameters)
         {
             if (param.name == paramName && param.type == AnimatorControllerParameterType.Bool)
+            {
                 return true;
+            }
         }
 
         return false;
@@ -211,10 +190,14 @@ public class EnemyHealth : MonoBehaviour
 
     bool HasTriggerParameter(Animator anim, string paramName)
     {
+        if (anim == null) return false;
+
         foreach (AnimatorControllerParameter param in anim.parameters)
         {
             if (param.name == paramName && param.type == AnimatorControllerParameterType.Trigger)
+            {
                 return true;
+            }
         }
 
         return false;

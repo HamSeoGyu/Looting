@@ -65,14 +65,14 @@ public class StageMonsterManager : MonoBehaviour
 
         isStageFailed = true;
 
-        if (StageResultUI.Instance != null)
+        if (StageResultController.Instance != null)
         {
-            StageResultUI.Instance.ShowStageFail();
+            StageResultController.Instance.ShowFail();
         }
         else
         {
             Time.timeScale = 0f;
-            Debug.LogWarning("StageResultUI가 없어 Time.timeScale만 정지했습니다.");
+            Debug.LogWarning("StageResultController가 없어 Time.timeScale만 정지했습니다.");
         }
 
         Debug.Log("스테이지 실패");

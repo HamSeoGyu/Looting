@@ -5036,6 +5036,9 @@ MonoBehaviour:
   resultCanvasGroup: {fileID: 0}
   clearPanel: {fileID: 420286559}
   failPanel: {fileID: 1984898197}
+  resultPanel: {fileID: 2022643856}
+  clearTitleObject: {fileID: 2019556520}
+  failTitleObject: {fileID: 1483617950}
   clearMainMenuButton: {fileID: 245633127}
   nextStageButton: {fileID: 278456261}
   failMainMenuButton: {fileID: 685192145}
@@ -7292,12 +7295,12 @@ RectTransform:
   - {fileID: 1933353784}
   - {fileID: 1791806034}
   - {fileID: 1181166286}
-  - {fileID: 2022643857}
   - {fileID: 2126437288}
   - {fileID: 986228132}
   - {fileID: 896293268}
   - {fileID: 1537577470}
   - {fileID: 1316772419}
+  - {fileID: 2022643857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9404,7 +9407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2022643857
 RectTransform:
   m_ObjectHideFlags: 0
