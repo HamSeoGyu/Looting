@@ -14,13 +14,17 @@ public class MageAttack : MonoBehaviour
     public Transform firePoint;
 
     [Header("Facing")]
-    public Transform visualRoot;   // º¸Åë UnitRoot
+    public Transform visualRoot;   // ï¿½ï¿½ï¿½ï¿½ UnitRoot
 
     private float lastAttackTime = -999f;
     private Animator animator;
     private UnitDrag unitDrag;
     private bool isAttacking = false;
     private Vector3 originalScale;
+
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioClip attackSound;
 
     void Start()
     {
@@ -29,6 +33,11 @@ public class MageAttack : MonoBehaviour
 
         if (visualRoot != null)
             originalScale = visualRoot.localScale;
+
+        if (audioSource == null)
+        {
+        audioSource = GetComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -94,15 +103,23 @@ public class MageAttack : MonoBehaviour
     {
         if (magicProjectilePrefab == null)
         {
-            Debug.LogError("MageAttack: magicProjectilePrefabÀÌ ¿¬°áµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("MageAttack: magicProjectilePrefabï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Ò½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
         Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position;
         spawnPos.z = 0f;
 
+        if (audioSource != null && attackSound != null)
+        {
+        audioSource.PlayOneShot(
+            attackSound,
+            PlayerPrefs.GetFloat("SFXVolume", 1f)
+         );
+        }
+
         GameObject proj = Instantiate(magicProjectilePrefab, spawnPos, Quaternion.identity);
-        Debug.Log("¸¶¹ý ±¸Ã¼ »ý¼º ¿Ï·á: " + proj.name);
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½: " + proj.name);
 
         MagicProjectile mp = proj.GetComponent<MagicProjectile>();
         if (mp != null)
@@ -111,11 +128,11 @@ public class MageAttack : MonoBehaviour
         }
         else
         {
-            Debug.LogError("MageAttack: MagicProjectile ÄÄÆ÷³ÍÆ®°¡ ¾ø½À´Ï´Ù.");
+            Debug.LogError("MageAttack: MagicProjectile ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
     }
 
-    // ÀûÀÌ ¿ÞÂÊ¿¡ ÀÖ¾îµµ ¿À¸¥ÂÊÀ» º¸°í, ÀûÀÌ ¿À¸¥ÂÊ¿¡ ÀÖ¾îµµ ¿ÞÂÊÀ» º¸°Ô
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ê¿ï¿½ ï¿½Ö¾îµµ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ ï¿½Ö¾îµµ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     void FaceTargetReverse(Transform target)
     {
         if (visualRoot == null || target == null) return;

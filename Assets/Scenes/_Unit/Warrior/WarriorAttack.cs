@@ -11,10 +11,19 @@ public class WarriorAttack : MonoBehaviour
     private Animator animator;
     private UnitDrag unitDrag;
 
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioClip attackSound;
+
     void Start()
     {
         animator = GetComponentInChildren<Animator>(true);
         unitDrag = GetComponent<UnitDrag>();
+
+        if (audioSource == null)
+        {
+        audioSource = GetComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -50,6 +59,14 @@ public class WarriorAttack : MonoBehaviour
         {
             animator.ResetTrigger("AttackTrigger");
             animator.SetTrigger("AttackTrigger");
+        }
+
+        if (audioSource != null && attackSound != null)
+        {
+            audioSource.PlayOneShot(
+               attackSound,
+               PlayerPrefs.GetFloat("SFXVolume", 1f)
+            );
         }
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");

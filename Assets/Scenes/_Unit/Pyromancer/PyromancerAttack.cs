@@ -10,7 +10,7 @@ public class PyromancerAttack : MonoBehaviour
     public Animator animator;
 
     [Header("Facing")]
-    public bool defaultFacesRight = true;   // Ä³¸¯ÅÍ ¿øº»ÀÌ ¿À¸¥ÂÊÀ» º¸°í ÀÖÀ¸¸é Ã¼Å©
+    public bool defaultFacesRight = true;   // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 
     [Header("Target")]
     public LayerMask enemyLayer;
@@ -28,12 +28,21 @@ public class PyromancerAttack : MonoBehaviour
     private bool isAttacking = false;
     private Vector3 originalScale;
 
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioClip attackSound;
+
     void Awake()
     {
         AutoFindReferences();
 
         if (visualRoot != null)
             originalScale = visualRoot.localScale;
+
+        if (audioSource == null)
+        {
+        audioSource = GetComponent<AudioSource>();
+        }
     }
 
     void AutoFindReferences()
@@ -90,6 +99,14 @@ public class PyromancerAttack : MonoBehaviour
 
         if (molotovPrefab != null && firePoint != null && target != null)
         {
+            if (audioSource != null && attackSound != null)
+            {
+            audioSource.PlayOneShot(
+            attackSound,
+            PlayerPrefs.GetFloat("SFXVolume", 1f)
+            );
+            }
+            
             GameObject bombObj = Instantiate(molotovPrefab, firePoint.position, Quaternion.identity);
             MolotovProjectile bomb = bombObj.GetComponent<MolotovProjectile>();
 

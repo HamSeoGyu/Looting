@@ -11,8 +11,8 @@ public class FrostMageAttack : MonoBehaviour
 
     [Header("Facing")]
     public bool defaultFacesRight = false;
-    // Áö±Ý ¹Ý´ë·Î µ·´Ù°í ÇÏ¼ÌÀ¸´Ï ±âº»°ªÀ» false·Î µÓ´Ï´Ù.
-    // ¸¸¾à ¶Ç ¹Ý´ë¸é Inspector¿¡¼­ ÀÌ°Í¸¸ Ã¼Å©/ÇØÁ¦ ¹Ù²Ù¸é µË´Ï´Ù.
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½Ý´ï¿½ï¿½ ï¿½ï¿½ï¿½Ù°ï¿½ ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ï¿½ï¿½ falseï¿½ï¿½ ï¿½Ó´Ï´ï¿½.
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ý´ï¿½ï¿½ Inspectorï¿½ï¿½ï¿½ï¿½ ï¿½Ì°Í¸ï¿½ Ã¼Å©/ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù¸ï¿½ ï¿½Ë´Ï´ï¿½.
 
     [Header("Target")]
     public LayerMask enemyLayer;
@@ -30,12 +30,21 @@ public class FrostMageAttack : MonoBehaviour
     private bool isAttacking = false;
     private Vector3 originalScale;
 
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioClip attackSound;
+
     void Awake()
     {
         AutoFindReferences();
 
         if (visualRoot != null)
             originalScale = visualRoot.localScale;
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
     }
 
     void AutoFindReferences()
@@ -92,6 +101,13 @@ public class FrostMageAttack : MonoBehaviour
 
         if (iceProjectilePrefab != null && firePoint != null && target != null)
         {
+            if (audioSource != null && attackSound != null)
+            {
+               audioSource.PlayOneShot(
+                attackSound,
+                PlayerPrefs.GetFloat("SFXVolume", 1f)
+               );
+            }
             GameObject projectileObj = Instantiate(iceProjectilePrefab, firePoint.position, Quaternion.identity);
             IceProjectile projectile = projectileObj.GetComponent<IceProjectile>();
 

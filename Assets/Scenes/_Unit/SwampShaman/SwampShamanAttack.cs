@@ -17,8 +17,8 @@ public class SwampShamanAttack : MonoBehaviour
     public float attackRange = 4.0f;
 
     [Header("Stats")]
-    public int directDamage = 3;        // ³·Àº Á÷°Ý ÇÇÇØ
-    public float attackCooldown = 2.2f; // ´À¸²
+    public int directDamage = 3;        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public float attackCooldown = 2.2f; // ï¿½ï¿½ï¿½ï¿½
     public float castDelay = 0.25f;
 
     [Header("Animation")]
@@ -28,12 +28,21 @@ public class SwampShamanAttack : MonoBehaviour
     private bool isAttacking = false;
     private Vector3 originalScale;
 
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioClip attackSound;
+
     void Awake()
     {
         AutoFindReferences();
 
         if (visualRoot != null)
             originalScale = visualRoot.localScale;
+
+        if (audioSource == null)
+        {
+        audioSource = GetComponent<AudioSource>();
+        }
     }
 
     void AutoFindReferences()
@@ -90,6 +99,14 @@ public class SwampShamanAttack : MonoBehaviour
 
         if (swampOrbProjectilePrefab != null && firePoint != null && target != null)
         {
+            if (audioSource != null && attackSound != null)
+            {
+                audioSource.PlayOneShot(
+                attackSound,
+                PlayerPrefs.GetFloat("SFXVolume", 1f)
+             );
+            }
+            
             GameObject projectileObj = Instantiate(swampOrbProjectilePrefab, firePoint.position, Quaternion.identity);
             SwampOrbProjectile projectile = projectileObj.GetComponent<SwampOrbProjectile>();
 

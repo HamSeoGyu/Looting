@@ -14,12 +14,16 @@ public class ArcherAttack : MonoBehaviour
     public Transform firePoint;
 
     [Header("Facing")]
-    public Transform visualRoot;   // º¸ÀÌ´Â Ä³¸¯ÅÍ ·çÆ® (º¸Åë UnitRoot)
+    public Transform visualRoot;   // ï¿½ï¿½ï¿½Ì´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ® (ï¿½ï¿½ï¿½ï¿½ UnitRoot)
 
     private float lastAttackTime = -999f;
     private Animator animator;
     private UnitDrag unitDrag;
     private bool isAttacking = false;
+
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioClip attackSound;
 
     private Vector3 originalVisualScale;
 
@@ -33,7 +37,12 @@ public class ArcherAttack : MonoBehaviour
             originalVisualScale = visualRoot.localScale;
         }
 
-        Debug.Log(gameObject.name + " : ArcherAttack ½ÃÀÛ");
+        if (audioSource == null)
+        {
+        audioSource = GetComponent<AudioSource>();
+        }
+
+        Debug.Log(gameObject.name + " : ArcherAttack ï¿½ï¿½ï¿½ï¿½");
     }
 
     void Update()
@@ -67,12 +76,12 @@ public class ArcherAttack : MonoBehaviour
 
         if (target != null)
         {
-            Debug.Log(gameObject.name + " : FireArrow È£Ãâ");
+            Debug.Log(gameObject.name + " : FireArrow È£ï¿½ï¿½");
             FireArrow(target.transform);
         }
         else
         {
-            Debug.Log(gameObject.name + " : fireDelay ÈÄ targetÀÌ null");
+            Debug.Log(gameObject.name + " : fireDelay ï¿½ï¿½ targetï¿½ï¿½ null");
         }
 
         isAttacking = false;
@@ -104,7 +113,7 @@ public class ArcherAttack : MonoBehaviour
     {
         if (arrowPrefab == null)
         {
-            Debug.LogError(gameObject.name + " : arrowPrefabÀÌ ¿¬°áµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError(gameObject.name + " : arrowPrefabï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Ò½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
@@ -115,16 +124,24 @@ public class ArcherAttack : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning(gameObject.name + " : firePoint°¡ ¾ø¾î transform.position¿¡¼­ ¹ß»çÇÕ´Ï´Ù.");
+            Debug.LogWarning(gameObject.name + " : firePointï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ transform.positionï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½Õ´Ï´ï¿½.");
         }
 
+        if (audioSource != null && attackSound != null)
+        {
+        audioSource.PlayOneShot(
+            attackSound,
+            PlayerPrefs.GetFloat("SFXVolume", 1f)
+        );
+        } 
+
         GameObject arrow = Instantiate(arrowPrefab, spawnPos, Quaternion.identity);
-        Debug.Log(gameObject.name + " : È­»ì »ý¼º ¿Ï·á -> " + arrow.name);
+        Debug.Log(gameObject.name + " : È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ -> " + arrow.name);
 
         ArrowProjectile projectile = arrow.GetComponent<ArrowProjectile>();
         if (projectile == null)
         {
-            Debug.LogError(gameObject.name + " : ArrowProjectile ÄÄÆ÷³ÍÆ®°¡ ¾ø½À´Ï´Ù.");
+            Debug.LogError(gameObject.name + " : ArrowProjectile ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
@@ -137,13 +154,13 @@ public class ArcherAttack : MonoBehaviour
 
         float dx = target.position.x - transform.position.x;
 
-        // °ÅÀÇ Á¤¸éÀÌ¸é ¹æÇâ À¯Áö
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (Mathf.Abs(dx) < 0.05f) return;
 
         Vector3 scale = originalVisualScale;
 
-        // ±âº» ½ºÇÁ¶óÀÌÆ® ±âÁØ
-        // ¿À¸¥ÂÊÀ» º¼ ¶§ Á¤»óÀÌ¶ó¸é ¾Æ·¡ ±×´ë·Î »ç¿ë
+        // ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½×´ï¿½ï¿½ ï¿½ï¿½ï¿½
         if (dx > 0)
         {
             scale.x = -Mathf.Abs(originalVisualScale.x);
