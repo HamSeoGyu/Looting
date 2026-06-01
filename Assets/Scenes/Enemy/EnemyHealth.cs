@@ -19,6 +19,11 @@ public class EnemyHealth : MonoBehaviour
 
     private bool isDead = false;
 
+    public bool IsDead
+    {
+        get { return isDead; }
+    }
+
     private Vector3 hpBarOriginalScale;
     private Vector3 hpBarOriginalPosition;
 
@@ -52,6 +57,16 @@ public class EnemyHealth : MonoBehaviour
         if (isDead) return;
 
         damage = Mathf.Max(0, damage);
+<<<<<<< HEAD
+=======
+
+        EnemyBuffReceiver buffReceiver = GetComponent<EnemyBuffReceiver>();
+        if (buffReceiver != null)
+        {
+            damage = buffReceiver.ModifyIncomingDamage(damage);
+        }
+
+>>>>>>> 589f55e (boss ÏÇ≠Ï†ú)
         currentHP -= damage;
 
         if (currentHP < 0)
@@ -63,6 +78,31 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public Vector2 GetClosestPoint(Vector2 fromPosition)
+    {
+        Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+
+        float closestDistance = Mathf.Infinity;
+        Vector2 closestPoint = transform.position;
+
+        foreach (Collider2D col in colliders)
+        {
+            if (col == null) continue;
+            if (!col.enabled) continue;
+
+            Vector2 point = col.ClosestPoint(fromPosition);
+            float distance = Vector2.Distance(fromPosition, point);
+
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestPoint = point;
+            }
+        }
+
+        return closestPoint;
     }
 
     void UpdateHPBar()
@@ -77,7 +117,6 @@ public class EnemyHealth : MonoBehaviour
         newScale.x = hpBarOriginalScale.x * ratio;
         hpBarFill.localScale = newScale;
 
-        // ø¿∏•¬ ø°º≠ øﬁ¬ ¿∏∑Œ ¡ŸæÓµÈ∞‘ ¿Ø¡ˆ
         float diff = hpBarOriginalScale.x - newScale.x;
         Vector3 newPos = hpBarOriginalPosition;
         newPos.x = hpBarOriginalPosition.x + diff / 2f;
@@ -87,6 +126,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         if (isDead) return;
+
         isDead = true;
 
         if (GoldManager.Instance != null)
@@ -94,27 +134,23 @@ public class EnemyHealth : MonoBehaviour
             GoldManager.Instance.AddGold(rewardGold);
         }
 
-        // ªÏæ∆ ¿÷¥¬ ¿˚ ƒ´øÓ∆Æø°º≠ ¡ÔΩ√ ∫¸¡ˆµµ∑œ ≈¬±◊ ¡¶∞≈
         if (CompareTag("Enemy"))
         {
             gameObject.tag = "Untagged";
         }
 
-        // ¿Ãµø ∏ÿ√„
         EnemyMove move = GetComponent<EnemyMove>();
         if (move != null)
         {
             move.enabled = false;
         }
 
-        // √Êµπ ≤Ù±‚
         Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
         foreach (Collider2D col in colliders)
         {
             col.enabled = false;
         }
 
-        // π∞∏Æ ∏ÿ√„
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
@@ -123,6 +159,7 @@ public class EnemyHealth : MonoBehaviour
         }
 
         PlayDeathAnimation();
+
         StartCoroutine(DestroyAfterDelay());
     }
 
