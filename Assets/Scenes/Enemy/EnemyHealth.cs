@@ -19,6 +19,11 @@ public class EnemyHealth : MonoBehaviour
 
     private bool isDead = false;
 
+    public bool IsDead
+    {
+        get { return isDead; }
+    }
+
     private Vector3 hpBarOriginalScale;
     private Vector3 hpBarOriginalPosition;
 
@@ -59,6 +64,13 @@ public class EnemyHealth : MonoBehaviour
         if (isDead) return;
 
         damage = Mathf.Max(0, damage);
+
+        EnemyCurseReceiver curseReceiver = GetComponent<EnemyCurseReceiver>();
+
+        if (curseReceiver != null)
+        {
+            damage = curseReceiver.ModifyIncomingDamage(damage);
+        }
 
         currentHP -= damage;
 
@@ -135,20 +147,34 @@ public class EnemyHealth : MonoBehaviour
 
     void PlayDeathAnimation()
     {
-        SPUMEnemyWalk spumEnemyWalk = GetComponent<SPUMEnemyWalk>();
+        Component spumEnemyWalk = GetComponent("SPUMEnemyWalk");
 
         if (spumEnemyWalk == null)
         {
-            spumEnemyWalk = GetComponentInChildren<SPUMEnemyWalk>(true);
+            Component[] components = GetComponentsInChildren<Component>(true);
+
+            foreach (Component component in components)
+            {
+                if (component != null && component.GetType().Name == "SPUMEnemyWalk")
+                {
+                    spumEnemyWalk = component;
+                    break;
+                }
+            }
         }
 
         if (spumEnemyWalk != null)
         {
-            bool played = spumEnemyWalk.PlayDeath();
+            System.Reflection.MethodInfo method = spumEnemyWalk.GetType().GetMethod("PlayDeath");
 
-            if (played)
+            if (method != null)
             {
-                return;
+                object result = method.Invoke(spumEnemyWalk, null);
+
+                if (result is bool && (bool)result)
+                {
+                    return;
+                }
             }
         }
 

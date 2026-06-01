@@ -1,8 +1,13 @@
 using UnityEngine;
+using System;
 using System.Collections;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static EnemySpawner Instance;
+
+    public static event Action<int> OnWaveStarted;
+
     [Header("Enemy Prefabs")]
     public GameObject skeletonPrefab;
     public GameObject bossPrefab;
@@ -22,12 +27,26 @@ public class EnemySpawner : MonoBehaviour
     [Header("Boss")]
     public float bossScaleMultiplier = 1.6f;
 
+    [Header("Debug")]
+    public bool startFromBossWave = false;
+    public int debugStartWave = 1;
+
     [Header("Optional")]
     public Transform enemyParent;
 
     private int currentWave = 0;
     private bool allWavesSpawned = false;
     private bool clearShown = false;
+
+    public int CurrentWave
+    {
+        get { return currentWave; }
+    }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -41,6 +60,15 @@ public class EnemySpawner : MonoBehaviour
         {
             Debug.LogError("EnemySpawner: stage1LoopRoute가 비어 있거나 포인트가 없습니다.");
             return;
+        }
+
+        if (startFromBossWave)
+        {
+            currentWave = maxWaves - 1;
+        }
+        else
+        {
+            currentWave = Mathf.Clamp(debugStartWave - 1, 0, maxWaves - 1);
         }
 
         StartCoroutine(StageRoutine());
@@ -75,7 +103,10 @@ public class EnemySpawner : MonoBehaviour
         while (currentWave < maxWaves)
         {
             currentWave++;
+
             Debug.Log("웨이브 시작: " + currentWave);
+
+            OnWaveStarted?.Invoke(currentWave);
 
             yield return StartCoroutine(SpawnWave(currentWave));
 
@@ -86,6 +117,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         allWavesSpawned = true;
+
         Debug.Log("모든 웨이브 생성 완료");
     }
 
@@ -96,29 +128,27 @@ public class EnemySpawner : MonoBehaviour
             yield return WaveStartUI.Instance.ShowWave(wave);
         }
 
-        int spawnCount = GetWaveSpawnCount(wave);
+        bool isBossWave = wave == maxWaves && bossPrefab != null;
 
-        for (int i = 0; i < spawnCount; i++)
+        if (isBossWave)
         {
-            SpawnEnemy(skeletonPrefab, wave, false);
-            yield return new WaitForSeconds(spawnInterval);
-        }
-
-        // 마지막 웨이브에서 보스 추가
-        if (wave == maxWaves && bossPrefab != null)
-        {
-            Debug.Log("보스 웨이브 시작 - 보스 BGM 재생");
+            Debug.Log("보스 웨이브 시작 - 보스와 첫 몬스터 동시 소환");
 
             if (BGMManager.Instance != null)
             {
                 BGMManager.Instance.PlayBossWaveBgm();
             }
-            else
-            {
-                Debug.LogWarning("BGMManager.Instance가 없습니다.");
-            }
 
             SpawnEnemy(bossPrefab, wave, true);
+        }
+
+        int spawnCount = GetWaveSpawnCount(wave);
+
+        for (int i = 0; i < spawnCount; i++)
+        {
+            SpawnEnemy(skeletonPrefab, wave, false);
+
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
 
@@ -148,6 +178,7 @@ public class EnemySpawner : MonoBehaviour
         if (prefab == null) return;
 
         Transform startPoint = stage1LoopRoute.GetPoint(0);
+
         if (startPoint == null)
         {
             Debug.LogWarning("EnemySpawner: 시작 포인트가 없습니다.");
@@ -157,23 +188,30 @@ public class EnemySpawner : MonoBehaviour
         GameObject enemy;
 
         if (enemyParent != null)
+        {
             enemy = Instantiate(prefab, startPoint.position, Quaternion.identity, enemyParent);
+        }
         else
+        {
             enemy = Instantiate(prefab, startPoint.position, Quaternion.identity);
+        }
 
-        // 루프 경로 연결
         EnemyMove mover = enemy.GetComponent<EnemyMove>();
+
         if (mover != null)
         {
             mover.route = stage1LoopRoute;
         }
         else
         {
-            Debug.LogWarning(enemy.name + " 에 EnemyMove가 없습니다.");
+            if (!isBoss)
+            {
+                Debug.LogWarning(enemy.name + " 에 EnemyMove가 없습니다.");
+            }
         }
 
-        // 체력/보상 설정
         EnemyHealth hp = enemy.GetComponent<EnemyHealth>();
+
         if (hp != null)
         {
             hp.SetMaxHP(GetWaveHP(wave, isBoss));
@@ -184,7 +222,6 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogWarning(enemy.name + " 에 EnemyHealth가 없습니다.");
         }
 
-        // 보스 크기 확대
         if (isBoss)
         {
             enemy.transform.localScale *= bossScaleMultiplier;
