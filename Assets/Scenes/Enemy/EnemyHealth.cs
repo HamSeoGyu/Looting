@@ -54,6 +54,7 @@ public class EnemyHealth : MonoBehaviour
         damage = Mathf.Max(0, damage);
 
         EnemyBuffReceiver buffReceiver = GetComponent<EnemyBuffReceiver>();
+
         if (buffReceiver != null)
         {
             damage = buffReceiver.ModifyIncomingDamage(damage);
