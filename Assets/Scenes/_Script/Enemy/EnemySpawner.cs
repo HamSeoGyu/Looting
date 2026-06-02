@@ -48,6 +48,12 @@ public class EnemySpawner : MonoBehaviour
         Instance = this;
     }
 
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+    }
+
     void Start()
     {
         if (skeletonPrefab == null)
@@ -139,6 +145,7 @@ public class EnemySpawner : MonoBehaviour
                 BGMManager.Instance.PlayBossWaveBgm();
             }
 
+            // 보스를 먼저 소환하고, 바로 아래 for문에서 첫 일반 몬스터도 소환됩니다.
             SpawnEnemy(bossPrefab, wave, true);
         }
 
@@ -147,7 +154,6 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < spawnCount; i++)
         {
             SpawnEnemy(skeletonPrefab, wave, false);
-
             yield return new WaitForSeconds(spawnInterval);
         }
     }

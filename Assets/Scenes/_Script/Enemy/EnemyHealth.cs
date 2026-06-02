@@ -72,6 +72,13 @@ public class EnemyHealth : MonoBehaviour
             damage = curseReceiver.ModifyIncomingDamage(damage);
         }
 
+        EnemyGoblinFrenzyReceiver frenzyReceiver = GetComponent<EnemyGoblinFrenzyReceiver>();
+
+        if (frenzyReceiver != null)
+        {
+            damage = frenzyReceiver.ModifyIncomingDamage(damage);
+        }
+
         currentHP -= damage;
 
         if (currentHP < 0)
@@ -128,12 +135,15 @@ public class EnemyHealth : MonoBehaviour
         }
 
         Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+
         foreach (Collider2D col in colliders)
         {
-            col.enabled = false;
+            if (col != null)
+                col.enabled = false;
         }
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
@@ -195,7 +205,6 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator DestroyAfterDelay()
     {
         yield return new WaitForSeconds(destroyDelay);
-
         Destroy(gameObject);
     }
 

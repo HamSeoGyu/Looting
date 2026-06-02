@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9c37bff9b282d1346bdb059eb1a24b20
+guid: 352b3fe5cc6546046a7d38ae221e7303
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7471399642687640826
-    second: Stage1 (2)_0
+      213: 1218663398537781828
+    second: boss_button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stage1 (2)_0
+      name: boss_button_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 33
         y: 0
-        width: 1672
-        height: 941
+        width: 794
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af4906dc36ebfa760800000000000000
-      internalID: 7471399642687640826
+      spriteID: 4426d9a77ef89e010800000000000000
+      internalID: 1218663398537781828
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stage1 (2)_0: 7471399642687640826
+      boss_button_0: 1218663398537781828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -936,7 +936,7 @@ GameObject:
   - component: {fileID: 351893398}
   - component: {fileID: 351893400}
   m_Layer: 0
-  m_Name: Stage1LoopRoute
+  m_Name: Stage2LoopRoute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1902,7 +1902,7 @@ GameObject:
   - component: {fileID: 497224906}
   - component: {fileID: 497224905}
   m_Layer: 0
-  m_Name: Stage1Map
+  m_Name: Stage2Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1957,7 +1957,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7471399642687640826, guid: 9c37bff9b282d1346bdb059eb1a24b20, type: 3}
+  m_Sprite: {fileID: 5471114978251189754, guid: c72c7dce44244ab42bdae02f23403aa4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5195,7 +5195,7 @@ MonoBehaviour:
   failMainMenuButton: {fileID: 685192145}
   retryButton: {fileID: 392068781}
   mainMenuSceneName: StageSelectScene
-  nextStageSceneName: Stage2
+  nextStageSceneName: 
   pauseGameWhenResult: 1
   debugTestKey: 1
 --- !u!4 &1317636729 stripped
@@ -5488,8 +5488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1301f483df46fa547b818a3c2fbbb0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  skeletonPrefab: {fileID: 8357441871052963528, guid: b6ba316516a0a9748aac3e485ac49997, type: 3}
-  bossPrefab: {fileID: 8357441871052963528, guid: 3d0dee2be9e689f459c745c932db6a50, type: 3}
+  skeletonPrefab: {fileID: 86069683756841543, guid: 30c2f3c5b138ddf418b702a2422fefb1, type: 3}
+  bossPrefab: {fileID: 4547994466323504707, guid: 14472f74d348f94459490245f75ca7c5, type: 3}
   stage1LoopRoute: {fileID: 351893400}
   maxWaves: 10
   firstWaveCount: 5

@@ -10,8 +10,10 @@ public class SkeletonBossCurseUnit : MonoBehaviour
     [Range(0f, 2f)]
     public float extraDamageTakenPercent = 0.2f;
 
-    [Header("Visual")]
-    public Transform visualRoot;
+    [Header("Curse Image Effect")]
+    public Sprite curseEffectSprite;
+    public float curseEffectHeightOffset = 1.25f;
+    public float curseEffectWorldHeight = 0.85f;
 
     [Header("Debug")]
     public bool showDebugRange = true;
@@ -54,7 +56,12 @@ public class SkeletonBossCurseUnit : MonoBehaviour
                 curseReceiver = enemy.gameObject.AddComponent<EnemyCurseReceiver>();
             }
 
+            curseReceiver.curseEffectSprite = curseEffectSprite;
+            curseReceiver.effectHeightOffset = curseEffectHeightOffset;
+            curseReceiver.effectWorldHeight = curseEffectWorldHeight;
+
             curseReceiver.ApplyCurse(curseDuration, extraDamageTakenPercent);
+
             cursedAnyEnemy = true;
         }
 
