@@ -5618,7 +5618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff31015e20911e541bc1c6ca5e32fe72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHP: 20
+  maxHP: 700
   currentHP: 0
   rewardGold: 10
   hpBarFill: {fileID: 8484473059826101237}

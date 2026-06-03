@@ -21,7 +21,10 @@ public class SceneButtonManager : MonoBehaviour
     {
     SceneManager.LoadScene("Stage2");
     }
-
+    public void GoToStage3()
+    {
+    SceneManager.LoadScene("Stage3");
+    }
     public void GoToStart()
     {
         SceneManager.LoadScene("StartScene");

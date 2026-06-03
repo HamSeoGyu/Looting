@@ -11,12 +11,11 @@ public class EnemyMove : MonoBehaviour
 
     [Header("Facing")]
     public Transform visualRoot;
-
-    // SPUM처럼 기본 방향이 반대인 몬스터용
     public bool invertFacing = false;
 
     private int currentIndex = 0;
     private Vector3 originalScale;
+    private bool initializedOnRoute = false;
 
     [Header("Freeze")]
     public bool isFrozen = false;
@@ -29,26 +28,21 @@ public class EnemyMove : MonoBehaviour
 
     void Start()
     {
-        if (visualRoot != null)
-        {
-            originalScale = visualRoot.localScale;
-        }
+        CacheOriginalScale();
+
+        if (initializedOnRoute)
+            return;
 
         if (route != null && route.Count > 0)
         {
-            transform.position = route.GetPoint(0).position;
-            currentIndex = route.Count > 1 ? 1 : 0;
-
-            if (route.Count > 1)
+            Transform startPoint = route.GetPoint(0);
+            if (startPoint != null)
             {
-                Transform firstTarget = route.GetPoint(currentIndex);
-
-                if (firstTarget != null)
-                {
-                    Vector3 dir = firstTarget.position - transform.position;
-                    UpdateFacing(dir, firstTarget);
-                }
+                transform.position = startPoint.position;
             }
+
+            currentIndex = route.Count > 1 ? 1 : 0;
+            FaceCurrentDirection();
         }
     }
 
@@ -84,6 +78,95 @@ public class EnemyMove : MonoBehaviour
         transform.position += dir.normalized * currentMoveSpeed * Time.deltaTime;
     }
 
+    public void InitializeOnRoute(LoopRoute newRoute, Vector3 spawnPosition, bool useNearestRouteSegment = true)
+    {
+        route = newRoute;
+        transform.position = spawnPosition;
+
+        CacheOriginalScale();
+
+        if (route != null && route.Count > 0)
+        {
+            if (useNearestRouteSegment)
+            {
+                currentIndex = FindNextRoutePointIndex(spawnPosition);
+            }
+            else
+            {
+                currentIndex = route.Count > 1 ? 1 : 0;
+            }
+
+            FaceCurrentDirection();
+        }
+
+        initializedOnRoute = true;
+    }
+
+    private void CacheOriginalScale()
+    {
+        if (visualRoot != null)
+        {
+            originalScale = visualRoot.localScale;
+        }
+    }
+
+    private void FaceCurrentDirection()
+    {
+        if (route == null || route.Count == 0) return;
+
+        Transform targetPoint = route.GetPoint(currentIndex);
+        if (targetPoint == null) return;
+
+        Vector3 dir = targetPoint.position - transform.position;
+        UpdateFacing(dir, targetPoint);
+    }
+
+    private int FindNextRoutePointIndex(Vector3 position)
+    {
+        if (route == null || route.Count == 0)
+            return 0;
+
+        if (route.Count == 1)
+            return 0;
+
+        float bestDistance = Mathf.Infinity;
+        int bestNextIndex = 1;
+
+        for (int i = 0; i < route.Count; i++)
+        {
+            int nextIndex = (i + 1) % route.Count;
+
+            Transform a = route.GetPoint(i);
+            Transform b = route.GetPoint(nextIndex);
+
+            if (a == null || b == null) continue;
+
+            Vector3 closest = GetClosestPointOnSegment(position, a.position, b.position);
+            float distance = Vector3.Distance(position, closest);
+
+            if (distance < bestDistance)
+            {
+                bestDistance = distance;
+                bestNextIndex = nextIndex;
+            }
+        }
+
+        return bestNextIndex;
+    }
+
+    private Vector3 GetClosestPointOnSegment(Vector3 point, Vector3 a, Vector3 b)
+    {
+        Vector3 ab = b - a;
+
+        if (ab.sqrMagnitude <= 0.0001f)
+            return a;
+
+        float t = Vector3.Dot(point - a, ab) / ab.sqrMagnitude;
+        t = Mathf.Clamp01(t);
+
+        return a + ab * t;
+    }
+
     void UpdateFacing(Vector3 currentDir, Transform currentTargetPoint)
     {
         if (visualRoot == null) return;
@@ -92,41 +175,34 @@ public class EnemyMove : MonoBehaviour
 
         if (Mathf.Abs(currentDir.x) > 0.01f)
         {
-            ApplyFacingScale(currentDir.x, ref scale);
+            float direction = currentDir.x > 0f ? 1f : -1f;
+
+            if (invertFacing)
+                direction *= -1f;
+
+            scale.x = Mathf.Abs(originalScale.x) * direction;
             visualRoot.localScale = scale;
             return;
         }
 
+        if (route == null || route.Count == 0) return;
+
         int nextIndex = (currentIndex + 1) % route.Count;
         Transform nextPoint = route.GetPoint(nextIndex);
 
-        if (nextPoint == null) return;
+        if (nextPoint == null || currentTargetPoint == null) return;
 
         Vector3 nextDir = nextPoint.position - currentTargetPoint.position;
 
         if (Mathf.Abs(nextDir.x) > 0.01f)
         {
-            ApplyFacingScale(nextDir.x, ref scale);
+            float direction = nextDir.x > 0f ? 1f : -1f;
+
+            if (invertFacing)
+                direction *= -1f;
+
+            scale.x = Mathf.Abs(originalScale.x) * direction;
             visualRoot.localScale = scale;
-        }
-    }
-
-    private void ApplyFacingScale(float directionX, ref Vector3 scale)
-    {
-        bool faceRight = directionX > 0f;
-
-        if (invertFacing)
-        {
-            faceRight = !faceRight;
-        }
-
-        if (faceRight)
-        {
-            scale.x = Mathf.Abs(originalScale.x);
-        }
-        else
-        {
-            scale.x = -Mathf.Abs(originalScale.x);
         }
     }
 
@@ -140,16 +216,7 @@ public class EnemyMove : MonoBehaviour
         transform.position = startPoint.position;
         currentIndex = route.Count > 1 ? 1 : 0;
 
-        if (route.Count > 1)
-        {
-            Transform nextTarget = route.GetPoint(currentIndex);
-
-            if (nextTarget != null)
-            {
-                Vector3 dir = nextTarget.position - transform.position;
-                UpdateFacing(dir, nextTarget);
-            }
-        }
+        FaceCurrentDirection();
     }
 
     public void ApplyFreeze(float duration)

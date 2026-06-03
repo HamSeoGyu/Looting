@@ -26,6 +26,8 @@ public class BGMManager : MonoBehaviour
         audioSource.loop = true;
         audioSource.playOnAwake = false;
         audioSource.spatialBlend = 0f;
+
+        volume = PlayerPrefs.GetFloat("MusicVolume", volume);
         audioSource.volume = volume;
     }
 
@@ -77,6 +79,19 @@ public class BGMManager : MonoBehaviour
             yield return null;
         }
 
+        volume = PlayerPrefs.GetFloat("MusicVolume", volume);
         audioSource.volume = volume;
     }
+
+    public void SetVolume(float newVolume)
+    {
+    volume = newVolume;
+
+    if (audioSource != null)
+    {
+        audioSource.volume = volume;
+    }
+
+    PlayerPrefs.SetFloat("MusicVolume", volume);
+}
 }
