@@ -4665,7 +4665,7 @@ PrefabInstance:
       objectReference: {fileID: 4098101913103753858, guid: 54f7295d14cee854d81f8b646b8def26, type: 3}
     - target: {fileID: 7668433762084307925, guid: 6fbb3187edfbed049861eb246eedb243, type: 3}
       propertyPath: canSummonBossOnlyOnce
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7668433762084307925, guid: 6fbb3187edfbed049861eb246eedb243, type: 3}
       propertyPath: requiredStageNumberForBoss
