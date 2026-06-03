@@ -27,7 +27,6 @@ public class SwampShamanAttack : MonoBehaviour
     private float nextAttackTime = 0f;
     private bool isAttacking = false;
     private Vector3 originalScale;
-    private UnitDrag unitDrag;
 
     [Header("Sound")]
     public AudioSource audioSource;
@@ -36,8 +35,6 @@ public class SwampShamanAttack : MonoBehaviour
     void Awake()
     {
         AutoFindReferences();
-
-        unitDrag = GetComponent<UnitDrag>();
 
         if (visualRoot != null)
             originalScale = visualRoot.localScale;
@@ -76,7 +73,6 @@ public class SwampShamanAttack : MonoBehaviour
 
     void Update()
     {
-        if (unitDrag != null && unitDrag.IsDragging) return;
         if (isAttacking) return;
         if (Time.time < nextAttackTime) return;
 

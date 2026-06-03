@@ -22,11 +22,6 @@ public class SkeletonBossCurseUnit : MonoBehaviour
 
     private void Update()
     {
-        UnitDrag unitDrag = GetComponent<UnitDrag>();
-
-        if (unitDrag != null && unitDrag.IsDragging)
-            return;
-
         if (Time.time < lastCurseTime + curseInterval)
             return;
 
