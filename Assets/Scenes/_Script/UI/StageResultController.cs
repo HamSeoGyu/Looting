@@ -98,13 +98,11 @@ public class StageResultController : MonoBehaviour
 
     if (currentSceneName == "Stage1")
     {
-        PlayerPrefs.SetInt("Stage2Unlocked", 1);
-        PlayerPrefs.Save();
+    StageProgressManager.unlockedStage = 2;
     }
     else if (currentSceneName == "Stage2")
     {
-        PlayerPrefs.SetInt("Stage3Unlocked", 1);
-        PlayerPrefs.Save();
+    StageProgressManager.unlockedStage = 3;
     }
 
     isResultShown = true;

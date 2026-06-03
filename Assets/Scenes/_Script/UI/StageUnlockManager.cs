@@ -9,9 +9,9 @@ public class StageUnlockManager : MonoBehaviour
     void Start()
     {
         stage2Button.interactable =
-            PlayerPrefs.GetInt("Stage2Unlocked", 0) == 1;
+            StageProgressManager.unlockedStage >= 2;
 
         stage3Button.interactable =
-            PlayerPrefs.GetInt("Stage3Unlocked", 0) == 1;
+            StageProgressManager.unlockedStage >= 3;
     }
 }
