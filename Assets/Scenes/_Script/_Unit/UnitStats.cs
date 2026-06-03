@@ -78,43 +78,43 @@ public class UnitStats : MonoBehaviour
         switch (type)
         {
             case UnitType.Warrior:
-                defaultAttack = 6;
+                defaultAttack = 10;
                 defaultCost = 50;
-                defaultIncrease = 3;
+                defaultIncrease = 5;
                 break;
 
             case UnitType.Mage:
-                defaultAttack = 4;
+                defaultAttack = 7;
                 defaultCost = 70;
-                defaultIncrease = 2;
+                defaultIncrease = 4;
                 break;
 
             case UnitType.Archer:
-                defaultAttack = 5;
+                defaultAttack = 8;
                 defaultCost = 60;
-                defaultIncrease = 3;
+                defaultIncrease = 4;
                 break;
 
             case UnitType.Pyromancer:
-                defaultAttack = 6;
+                defaultAttack = 10;
                 defaultCost = 90;
-                defaultIncrease = 2;
+                defaultIncrease = 4;
                 break;
 
             case UnitType.FrostMage:
-                defaultAttack = 4;
+                defaultAttack = 6;
                 defaultCost = 80;
-                defaultIncrease = 2;
+                defaultIncrease = 3;
                 break;
 
             case UnitType.SwampShaman:
-                defaultAttack = 2;
+                defaultAttack = 3;
                 defaultCost = 85;
-                defaultIncrease = 1;
+                defaultIncrease = 2;
                 break;
 
             default:
-                defaultAttack = 4;
+                defaultAttack = 5;
                 defaultCost = 50;
                 defaultIncrease = 2;
                 break;

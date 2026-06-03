@@ -70,7 +70,7 @@ public class StageResultController : MonoBehaviour
         if (retryButton != null)
             retryButton.onClick.AddListener(RetryStage);
 
-        Debug.Log("StageResultController ÁØºñ ¿Ï·á");
+        Debug.Log("StageResultController ï¿½Øºï¿½ ï¿½Ï·ï¿½");
     }
 
     private void Update()
@@ -79,36 +79,49 @@ public class StageResultController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            Debug.Log("F1 Å×½ºÆ®: Å¬¸®¾î UI Ç¥½Ã");
+            Debug.Log("F1 ï¿½×½ï¿½Æ®: Å¬ï¿½ï¿½ï¿½ï¿½ UI Ç¥ï¿½ï¿½");
             ShowClear();
         }
 
         if (Input.GetKeyDown(KeyCode.F2))
         {
-            Debug.Log("F2 Å×½ºÆ®: ½ÇÆÐ UI Ç¥½Ã");
+            Debug.Log("F2 ï¿½×½ï¿½Æ®: ï¿½ï¿½ï¿½ï¿½ UI Ç¥ï¿½ï¿½");
             ShowFail();
         }
     }
 
     public void ShowClear()
     {
-        if (isResultShown) return;
+            if (isResultShown) return;
 
-        isResultShown = true;
-        ShowRootPanel();
+    string currentSceneName = SceneManager.GetActiveScene().name;
 
-        if (clearPanel != null)
-            clearPanel.SetActive(true);
+    if (currentSceneName == "Stage1")
+    {
+        PlayerPrefs.SetInt("Stage2Unlocked", 1);
+        PlayerPrefs.Save();
+    }
+    else if (currentSceneName == "Stage2")
+    {
+        PlayerPrefs.SetInt("Stage3Unlocked", 1);
+        PlayerPrefs.Save();
+    }
 
-        if (failPanel != null)
-            failPanel.SetActive(false);
+    isResultShown = true;
+    ShowRootPanel();
 
-        ShowResultImages(true);
+    if (clearPanel != null)
+        clearPanel.SetActive(true);
 
-        if (pauseGameWhenResult)
-            Time.timeScale = 0f;
+    if (failPanel != null)
+        failPanel.SetActive(false);
 
-        Debug.Log("½ºÅ×ÀÌÁö Å¬¸®¾î UI Ç¥½Ã");
+    ShowResultImages(true);
+
+    if (pauseGameWhenResult)
+        Time.timeScale = 0f;
+
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ UI Ç¥ï¿½ï¿½");
     }
 
     public void ShowFail()
@@ -129,7 +142,7 @@ public class StageResultController : MonoBehaviour
         if (pauseGameWhenResult)
             Time.timeScale = 0f;
 
-        Debug.Log("½ºÅ×ÀÌÁö ½ÇÆÐ UI Ç¥½Ã");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UI Ç¥ï¿½ï¿½");
     }
 
     public void ShowStageClear()
@@ -154,20 +167,20 @@ public class StageResultController : MonoBehaviour
             resultCanvasGroup.blocksRaycasts = true;
         }
 
-        // StageResultPanelÀÌ ¸ÕÀú ±ò¸®°í
+        // StageResultPanelï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ò¸®°ï¿½
         if (stageResultPanel != null)
             stageResultPanel.transform.SetAsLastSibling();
     }
 
     private void ShowResultImages(bool isClear)
     {
-        // ResultPanel ºÎ¸ðµµ ¹Ýµå½Ã ÄÑ¾ß ÇÔ
+        // ResultPanel ï¿½Î¸ï¿½ ï¿½Ýµï¿½ï¿½ ï¿½Ñ¾ï¿½ ï¿½ï¿½
         if (resultPanel != null)
         {
             resultPanel.SetActive(true);
             ForceCanvasGroupVisible(resultPanel);
 
-            // ResultPanelÀ» StageResultPanelº¸´Ù ´õ À§¿¡ º¸ÀÌ°Ô ÇÔ
+            // ResultPanelï¿½ï¿½ StageResultPanelï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½
             resultPanel.transform.SetAsLastSibling();
         }
 
@@ -232,7 +245,7 @@ public class StageResultController : MonoBehaviour
             color.a = 1f;
             graphic.color = color;
 
-            // °á°ú ÀÌ¹ÌÁö´Â ¹öÆ° Å¬¸¯À» ¸·À¸¸é ¾È µÊ
+            // ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
             graphic.raycastTarget = false;
         }
 
@@ -301,7 +314,7 @@ public class StageResultController : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("´ÙÀ½ ½ºÅ×ÀÌÁö°¡ Build Settings¿¡ ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Build Settingsï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
     }
 
