@@ -12,7 +12,7 @@ public class FireZone : MonoBehaviour
     [Header("Damage")]
     public LayerMask enemyLayer;
     public float damageRadius = 1.1f;
-    public int tickDamage = 2;
+    public int tickDamage = 1;
     public float tickInterval = 0.5f;
     public float lifeTime = 3f;
 
