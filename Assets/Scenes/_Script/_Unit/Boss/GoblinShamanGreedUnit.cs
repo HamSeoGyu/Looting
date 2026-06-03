@@ -47,6 +47,11 @@ public class GoblinShamanGreedUnit : MonoBehaviour
 
     private void Update()
     {
+        UnitDrag unitDrag = GetComponent<UnitDrag>();
+
+        if (unitDrag != null && unitDrag.IsDragging)
+            return;
+
         UpdateIdleMotion();
 
         if (Time.time < lastGreedTime + greedInterval)

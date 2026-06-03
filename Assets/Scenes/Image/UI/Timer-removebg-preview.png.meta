@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a7893e2ec4b7bbb408a7e20c7d1346ed
+guid: 06838cbe0ea34e14eb8ab112e8af770e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1729773770451957246
-    second: Stage3 1_0
+      213: -3929078090629222292
+    second: Timer-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stage3 1_0
+      name: Timer-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1672
-        height: 941
+        x: 34
+        y: 42
+        width: 798
+        height: 211
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef5b3995414610810800000000000000
-      internalID: 1729773770451957246
+      spriteID: c6076413b4c1979c0800000000000000
+      internalID: -3929078090629222292
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stage3 1_0: 1729773770451957246
+      Timer-removebg-preview_0: -3929078090629222292
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
